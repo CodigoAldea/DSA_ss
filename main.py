@@ -2,6 +2,7 @@ var = 10
 # array 
 var_array = [1,2,3,4,5]
 var_array[3] = 100
+
 1000 + ( 3 * 4) = 1012
 
 # Insertion 

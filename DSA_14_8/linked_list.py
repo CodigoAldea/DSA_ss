@@ -12,6 +12,19 @@ class LinkedList :
         new_node = Node(data) # creating a new node 
         new_node.next = self.head # pointing the new node to the head
         self.head = new_node # pointing the head to the new node
+    
+    def insert_middle(self,data, position):
+        # positon of the node before which the new node is to be inserted
+        
+        new_node = Node(data) # new node 
+        
+        temp = self.head  # this head is of linkedList and it is pointing to the 1st node.We are using it for the traversal to the required position/node.
+        
+        for i in range(position - 1):
+            temp = temp.next
+            
+        new_node.next = temp.next
+        temp.next = new_node
         
 linked_list = LinkedList()
 linked_list.insert_start(10)

@@ -81,7 +81,7 @@ class LinkedList :
         temp = self.head 
         while temp:
             print(temp.data, end=" -> ")
-            temp=
+            temp= temp.next
             
             
         print("None") 

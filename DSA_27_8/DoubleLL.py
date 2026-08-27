@@ -53,4 +53,69 @@ class dll:
     
     
     def delete_start(self):
-        pass
+        if self.head is None:
+            print("Enpty List")
+            return
+        
+        if self.head == self.tail:
+            self.head = None
+            self.tail = None
+            return
+        
+        self.head = self.head.next
+        self.head.prev = None
+        
+    def delete_end(self):
+        if self.head is None:
+            print("Enpty List")
+            return
+        
+        if self.head == self.tail:
+            self.head = None
+            self.tail = None
+            return
+        
+        self.tail = self.tail.prev
+        self.tail.next = None
+        
+    def delete_mid(self, positon):
+        if self.head is None:
+            print("Enpty List")
+            return
+        
+        if self.head == self.tail:
+            self.head = None
+            self.tail = None
+            return
+        
+        temp = self.head
+        
+        for i in range(positon):
+            temp = temp.next
+            
+        temp.prev.next = temp.next
+        
+        if temp.next is not None:
+            temp.next.prev = temp.prev
+            
+        if temp == self.tail:
+            self.tail = temp.prev
+            
+    def display_lr(self):
+        temp = self.head
+        while temp:
+            print(temp.data, end= "⇄")
+            temp.next
+        print("None")
+        
+    def display_rl(self):
+        temp = self.tail
+        
+        while temp:
+            print(temp.data, end= "⇄")
+            temp.prev
+
+        print("None")
+        
+        
+# for(Node temp = head; temp != null; temp=temp.next)
